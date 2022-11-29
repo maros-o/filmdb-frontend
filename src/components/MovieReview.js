@@ -3,7 +3,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const MovieReview = ({ review, idx }) => {
   return (
-    <div className="border rounded-md m-1.5 p-2 bg-[#f3f3f3]">
+    <div className="border rounded-md m-1.5 p-2 bg-[#f7f4f4]">
       <div className="flex justify-between">
         <div className="flex items-center font-semibold">
           {review.username}

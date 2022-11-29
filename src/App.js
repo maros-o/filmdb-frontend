@@ -7,6 +7,9 @@ import Movies from "./pages/Movies";
 import MovieDetail from "./pages/MovieDetail";
 import Home from "./pages/Home";
 import ReviewForm from "./pages/ReviewForm";
+import Actors from "./pages/Actors";
+import Directors from "./pages/Directors";
+import PersonDetail from "./pages/PersonDetail";
 
 function App() {
   document.title = "FilmDB.cz";
@@ -22,7 +25,10 @@ function App() {
               <Route path="/registrace" element={<Register />} />
               <Route path="/prihlaseni" element={<Login />} />
               <Route path="/zebricky/filmy" element={<Movies />} />
+              <Route path="/zebricky/herci" element={<Actors />} />
+              <Route path="/zebricky/reziseri" element={<Directors />} />
               <Route path="/filmy/:filmSlug" element={<MovieDetail />} />
+              <Route path="/lide/:personSlug" element={<PersonDetail />} />
               <Route path="/hodnoceni/film/:filmId" element={<ReviewForm />} />
             </Routes>
           </div>

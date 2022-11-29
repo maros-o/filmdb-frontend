@@ -37,7 +37,7 @@ const MovieItem = ({ idx, movie }) => {
               {movie.directors.map((dir, idx) => (
                 <a href={`../lide/${dir.slug}`} className="flex" key={idx}>
                   {idx > 0 ? <div>,</div> : null}
-                  <div className="pl-1 text-[#ba0305] hover:text-blue-900 transition-all">
+                  <div className="pl-1 link">
                     {" "}
                     {dir.name}{" "}
                   </div>
@@ -51,7 +51,7 @@ const MovieItem = ({ idx, movie }) => {
               {movie.actors.map((act, idx) => (
                 <a href={`../lide/${act.slug}`} className="flex" key={idx}>
                   {idx > 0 ? <div>,</div> : null}
-                  <div className="pl-1 text-[#ba0305] hover:text-blue-900 transition-all">
+                  <div className="pl-1 link">
                     {" "}
                     {act.name}{" "}
                   </div>

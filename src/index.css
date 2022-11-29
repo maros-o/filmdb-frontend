@@ -21,4 +21,7 @@
   .movie-ordering {
     @apply p-1 text-sm flex justify-center items-center text-[#ba0305] hover:text-black transition-all
   }
+  .link {
+    @apply text-[#ba0305] hover:text-blue-900 transition-all
+  }
 }

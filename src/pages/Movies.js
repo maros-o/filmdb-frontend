@@ -32,7 +32,7 @@ const orderByWorst = (movies) => {
   return temp;
 };
 
-const orderByNewest = (movies) => {
+export const orderByNewest = (movies) => {
   const temp = [...movies];
   temp.sort((a, b) => b.release_year - a.release_year);
   return temp;
