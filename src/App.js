@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import Header from "./components/Header";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Movies from "./pages/Movies";
+import MovieDetail from "./pages/MovieDetail";
+import Home from "./pages/Home";
+import ReviewForm from "./pages/ReviewForm";
 
 function App() {
+  document.title = "FilmDB.cz";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AuthProvider>
+        <div className="flex justify-center">
+          <div className="max-w-screen-lg w-full bg-[#f7f7f7] h-screen">
+            <Header />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/registrace" element={<Register />} />
+              <Route path="/prihlaseni" element={<Login />} />
+              <Route path="/zebricky/filmy" element={<Movies />} />
+              <Route path="/filmy/:filmSlug" element={<MovieDetail />} />
+              <Route path="/hodnoceni/film/:filmId" element={<ReviewForm />} />
+            </Routes>
+          </div>
+        </div>
+      </AuthProvider>
+    </Router>
   );
 }
 
 export default App;
+
+/*
+<Route path="/filmy" element={<SignupPage />} />
+        <Route path="/herci" element={<SigninPage />} />
+        <Route path="/reziseri" element={<SignupPage />} />
+        <Route exact path="/" element={<HomePage />} />
+*/
