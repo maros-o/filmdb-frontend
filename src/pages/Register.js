@@ -196,10 +196,12 @@ const Register = () => {
               >
                 POKRAČOVAT
               </button>
-              {serverError !== "" ? (
-                <div className="flex text-rose-400">{serverError}</div>
-              ) : null}
             </div>
+            {serverError !== "" ? (
+              <div className="text-rose-500 text-center font-semibold py-1">
+                {serverError}
+              </div>
+            ) : null}
             <div className="p-2">
               Už máte účet?
               <a href={`/prihlaseni`}>
