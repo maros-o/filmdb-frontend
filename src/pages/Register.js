@@ -82,7 +82,7 @@ const Register = () => {
     if (e.target.value[e.target.value.length - 1] === " ") return;
     if (e.target.value.length > 30) return;
 
-    if (e.target.value.length < 5) setPasswdError(true);
+    if (e.target.value.length < 8) setPasswdError(true);
     else setPasswdError(false);
 
     setPasswd(e.target.value);
@@ -124,8 +124,8 @@ const Register = () => {
       </div>
       <div className="flex justify-center mt-3">
         <div className="flex justify-center border border-slate-400/50 max-w-screen-sm rounded-md text-sm py-5 px-8">
-          <div>
-            <form className="form-text-wrapper">
+          <form onSubmit={handleButton}>
+            <div className="form-text-wrapper">
               <div className="form-title">Přezdívka:</div>
               <input
                 type="username"
@@ -141,8 +141,8 @@ const Register = () => {
                   Uživatelské jméno musí být delší než 4 znaky
                 </div>
               ) : null}
-            </form>
-            <form className="form-text-wrapper">
+            </div>
+            <div className="form-text-wrapper">
               <div className="form-title">E-mail:</div>
               <input
                 value={email}
@@ -156,8 +156,8 @@ const Register = () => {
               {emailError ? (
                 <div className="form-error">Email není validní</div>
               ) : null}
-            </form>
-            <form className="form-text-wrapper">
+            </div>
+            <div className="form-text-wrapper">
               <div className="form-title">Heslo:</div>
               <input
                 value={passwd}
@@ -173,8 +173,8 @@ const Register = () => {
                   Heslo musí být nejméně 8 znaků dlouhé
                 </div>
               ) : null}
-            </form>
-            <form className="form-text-wrapper">
+            </div>
+            <div className="form-text-wrapper">
               <div className="form-title">Heslo pro kontrolu:</div>
               <input
                 value={confPasswd}
@@ -188,11 +188,11 @@ const Register = () => {
               {confPasswdError ? (
                 <div className="form-error">Hesla se neshodují</div>
               ) : null}
-            </form>
+            </div>
             <div className="flex justify-center mt-1">
               <button
                 className="m-2 p-1 px-1.5 rounded text-white bg-[#ba0305] hover:bg-red-800 transition-all"
-                onClick={handleButton}
+                type="submit"
               >
                 POKRAČOVAT
               </button>
@@ -210,7 +210,7 @@ const Register = () => {
                 </button>
               </a>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

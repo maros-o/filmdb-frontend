@@ -24,4 +24,7 @@
   .link {
     @apply text-[#ba0305] hover:text-blue-900 transition-all
   }
+  .profile-menu-button {
+    @apply py-1.5 px-3 font-semibold hover:text-[#ba0305]
+  }
 }

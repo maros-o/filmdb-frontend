@@ -25,7 +25,7 @@ const Header = () => {
     if (user_info)
       return (
         <div className="absolute bg-[#f7f7f7] top-[50px] w-[104px] text-blue-600 shadow-lg text-sm rounded-b-md">
-          <div className="my-1 py-1.5 px-3 hover:text-[#ba0305]">
+          <div className="my-1 profile-menu-button">
             <button onClick={logoutUser}>Odhlásit se</button>
           </div>
         </div>
@@ -33,11 +33,11 @@ const Header = () => {
 
     return (
       <div className="absolute bg-[#f7f7f7] top-[50px] w-[104px] text-blue-600 shadow-lg text-sm rounded-b-md">
-        <div className="mt-1 py-1.5 px-3 hover:text-[#ba0305]">
+        <div className="mt-1 profile-menu-button">
           <a href="/prihlaseni">Přihlášení</a>
         </div>
 
-        <div className="mb-1 py-1.5 px-3 hover:text-[#ba0305]">
+        <div className="mb-1 profile-menu-button">
           <a href="/registrace">Registrace</a>
         </div>
       </div>
